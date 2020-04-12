@@ -25,7 +25,7 @@ public class APISetUp {
 
 	public static ConfigProperty configProperty;
 	public static ExcelReader excel = new ExcelReader(
-			"C:\\selenium\\Pom\\PageObjectModel-master\\API_Automation\\src\\test\\resources\\TestData\\API_TestData.xlsx");
+			System.getProperty("user.dir")+"\\src\\test\\resources\\TestData\\API_TestData.xlsx");
 	public static ExtentReports extentReport;
 	public static ThreadLocal<ExtentTest> classLevelLog = new ThreadLocal<ExtentTest>();
 	public static ThreadLocal<ExtentTest> testLevelLog = new ThreadLocal<ExtentTest>();
