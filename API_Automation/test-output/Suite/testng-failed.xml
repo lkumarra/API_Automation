@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.w2a.API_Automation.listners.CustomListeners"/>
+    <listener class-name="com.w2a.API_Automation.listners.RetryTransformer"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="com.w2a.API_Automation.testCases.TestCreateCostumerAPI">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="afterMethod"/>
+          <include name="validateCreateCustomerAPIWithValidData"/>
+          <include name="beforeClass"/>
+          <include name="m1"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.w2a.API_Automation.testCases.TestCreateCostumerAPI -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
