@@ -17,6 +17,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.w2a.API_Automation.testUtils.ConfigProperty;
 import com.w2a.API_Automation.testUtils.ExcelReader;
 import com.w2a.API_Automation.testUtils.Extentmanager;
+import com.w2a.API_Automation.testUtils.TestUtil;
 
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
@@ -36,6 +37,7 @@ public class APISetUp {
 		configProperty = ConfigFactory.create(ConfigProperty.class);
 		RestAssured.baseURI = configProperty.getBaseURI();
 		RestAssured.basePath = configProperty.getBasePath();
+		TestUtil.archiveTestReport();
 		extentReport = Extentmanager.GetExtent(configProperty.getTestFilePath() + configProperty.getTestReportName());
 
 	}

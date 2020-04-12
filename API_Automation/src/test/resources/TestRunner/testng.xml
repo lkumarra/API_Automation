@@ -9,8 +9,8 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-<!-- 			<class
-				name="com.w2a.API_Automation.testCases.TestCreateCostumerAPI" /> -->
+		<class
+				name="com.w2a.API_Automation.testCases.TestCreateCostumerAPI" />
 			<class
 				name="com.w2a.API_Automation.testCases.TestCreateUserAPI"></class>
 		</classes>
