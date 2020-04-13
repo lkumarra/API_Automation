@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 import org.aeonbits.owner.Config.Sources;
 
 @Sources({
-	"file:src/test/resources/PropertyFiles/config.properties"
+	"file:src/test/resources/PropertyFiles/${environment}.properties"
 })
 public interface ConfigProperty extends Config{
 	
