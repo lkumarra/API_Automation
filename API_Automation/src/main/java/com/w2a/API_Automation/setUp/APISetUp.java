@@ -34,8 +34,8 @@ public class APISetUp {
 	@BeforeSuite
 	public void beforeSuite() {
 
-		System.out.println("Environment selected in jenkins:-"+System.getProperty("Environment"));
-		ConfigFactory.setProperty("environmenr", System.getProperty("Environment"));
+		System.out.println("Environment selected in jenkins:-"+System.getProperty("environmentValue"));
+		ConfigFactory.setProperty("environmenr", System.getProperty("environmentValue"));
 		configProperty = ConfigFactory.create(ConfigProperty.class);
 		RestAssured.baseURI = configProperty.getBaseURI();
 		RestAssured.basePath = configProperty.getBasePath();
