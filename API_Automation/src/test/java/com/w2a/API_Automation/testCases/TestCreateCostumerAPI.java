@@ -17,7 +17,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class TestCreateCostumerAPI extends APISetUp {
 
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "dp", priority = 1, enabled = true, dependsOnMethods = "m1")
+	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "dp", priority = 0, enabled = true)
 	public void validateCreateCustomerAPIWithValidData(Hashtable<String, String> data) {
 		testLevelLog.get().assignAuthor("Lavendra");
 		testLevelLog.get().assignCategory("Sanity");
@@ -27,11 +27,6 @@ public class TestCreateCostumerAPI extends APISetUp {
 
 	}
 	
-	@Test(priority = 0)
-	public void m1() {
-		Assert.fail();
-	}
-
 //	@Test(dataProviderClass = DataProviderClass.class, dataProvider = "dp", priority = 1, enabled = true)
 //	public void validateCreateCustomerAPIWithInvalidAuthKey(Hashtable<String, String> data) {
 //
