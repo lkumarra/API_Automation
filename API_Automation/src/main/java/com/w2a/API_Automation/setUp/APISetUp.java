@@ -33,9 +33,14 @@ public class APISetUp {
 
 	@BeforeSuite
 	public void beforeSuite() {
-
-		System.out.println("Environment selected in jenkins:-"+System.getProperty("environmentValue"));
-		ConfigFactory.setProperty("environment", System.getProperty("environmentValue"));
+		if (System.getProperty("environmentValue")!= null && !System.getProperty("environmentValue").isEmpty()) {
+			ConfigFactory.setProperty("environment", System.getProperty("environmentValue"));
+			System.out.println("Environment selected in jenkins:-"+System.getProperty("environmentValue"));
+		} else {
+			ConfigFactory.setProperty("environment", "config");
+			System.out.println("Environment selected is config");
+		}
+		
 		configProperty = ConfigFactory.create(ConfigProperty.class);
 		RestAssured.baseURI = configProperty.getBaseURI();
 		RestAssured.basePath = configProperty.getBasePath();
@@ -61,15 +66,7 @@ public class APISetUp {
 
 	@AfterMethod
 	public void afterMethod(ITestResult result) {
-//
-//		if (result.getStatus() == ITestResult.SUCCESS) {
-//			testLevelLog.get().pass("This Test Case is passed");
-//		} else if (result.getStatus() == ITestResult.FAILURE) {
-//			testLevelLog.get().fail("This Test Case is Failed");
-//		} else if (result.getStatus() == ITestResult.SKIP) {
-//			testLevelLog.get().skip("This Test Case is Skipped");
-//		}
-//		extentReport.flush();
+
 
 	}
 

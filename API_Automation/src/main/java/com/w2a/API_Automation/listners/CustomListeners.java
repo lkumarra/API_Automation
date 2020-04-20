@@ -1,7 +1,14 @@
 package com.w2a.API_Automation.listners;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Arrays;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.AddressException;
+
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -13,7 +20,11 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.w2a.API_Automation.setUp.APISetUp;
 
 
-public class CustomListeners extends APISetUp implements ITestListener{
+
+
+
+
+public class CustomListeners extends APISetUp implements ITestListener, ISuiteListener{
 
 	public void onFinish(ITestContext arg0) {
 		// TODO Auto-generated method stub
@@ -65,6 +76,16 @@ public class CustomListeners extends APISetUp implements ITestListener{
 		System.out.println("Inside the success method");
 		testLevelLog.get().pass("<b>"+"This Test Case got Passed"+"</b>");
 		extentReport.flush();
+		
+	}
+
+	public void onStart(ISuite suite) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void onFinish(ISuite suite) {
+
 		
 	}
 
